@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi simulador de entrenamiento | TP7</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <p class="etiqueta">TP7</p>
+      <h1>Mi simulador de entrenamiento</h1>
+      <p>Explorá las rutinas, elegí las actividades para tu plan y consultá tus minutos y calorías estimadas.</p>
+    </header>
+
+    <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+    <section class="panel" aria-labelledby="titulo-rutinas">
+      <div class="cabecera-seccion">
+        <div>
+          <p class="paso">PASO 1 · EXPLORAR</p>
+          <h2 id="titulo-rutinas">Catálogo de rutinas</h2>
+          <p class="texto-secundario">Elegí una actividad para añadirla a tu plan. El catálogo es solo una lista de opciones.</p>
+          <p id="resumen" class="texto-secundario"></p>
+        </div>
+        <span class="insignia">Disponible</span>
+      </div>
+      <div class="filtros">
+        <label>Buscar por nombre
+          <input id="busqueda" type="search" placeholder="Ej.: Yoga">
+        </label>
+        <label>Filtrar por nivel
+          <select id="filtro-nivel">
+            <option value="Todos">Todos los niveles</option>
+            <option value="Principiante">Principiante</option>
+            <option value="Intermedio">Intermedio</option>
+            <option value="Avanzado">Avanzado</option>
+          </select>
+        </label>
+      </div>
+      <div id="contenedor-rutinas" class="lista-rutinas" aria-live="polite"></div>
+    </section>
+
+    <section class="panel panel-destacado" aria-labelledby="titulo-plan">
+      <p class="paso">PASO 2 · ORGANIZAR</p>
+      <h2 id="titulo-plan">Mi plan de actividades</h2>
+      <p class="texto-secundario">Acá se muestran solo las rutinas que seleccionaste. Podés agregar 5 minutos a cada una o quitarla de tu plan.</p>
+      <div id="contenedor-plan" class="lista-rutinas" aria-live="polite"></div>
+      <div class="totales-plan">
+        <div><span>Actividades seleccionadas</span><strong id="total-actividades">0</strong></div>
+        <div><span>Tiempo total</span><strong id="total-minutos">0 min</strong></div>
+        <div><span>Calorías estimadas</span><strong id="total-calorias">0 kcal</strong></div>
+      </div>
+      <p class="nota">Los totales corresponden solo a las actividades de tu plan, considerando una sesión de cada una. Las calorías son orientativas.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-agregar">
+      <p class="paso">PASO 3 · PERSONALIZAR (OPCIONAL)</p>
+      <h2 id="titulo-agregar">Crear una rutina propia</h2>
+      <p class="texto-secundario">¿No encontraste una que te guste? Creá la tuya. Se agregará al catálogo y también a tu plan.</p>
+      <form id="form-rutina">
+        <div class="campos">
+          <label>Nombre de la rutina
+            <input id="nombre" type="text" placeholder="Ej.: Pilates" required maxlength="70">
+          </label>
+          <label>Duración (minutos)
+            <input id="duracion" type="number" min="1" step="1" placeholder="40" required>
+          </label>
+          <label>Calorías estimadas por minuto
+            <input id="calorias" type="number" min="0.1" step="0.1" placeholder="5" required>
+          </label>
+          <label>Nivel de dificultad
+            <select id="nivel" required>
+              <option value="">Elegí un nivel</option>
+              <option value="Principiante">Principiante</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+            </select>
+          </label>
+        </div>
+        <button class="boton boton-principal" type="submit">+ Crear y agregar a mi plan</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-planificacion">
+      <p class="paso">PASO 4 · PLANIFICAR</p>
+      <h2 id="titulo-planificacion">Planificación semanal</h2>
+      <p class="texto-secundario">Elegí cuántos días de la semana querés entrenar. Este dato no modifica la cantidad de sesiones del plan.</p>
+      <form id="form-dias" class="form-dias">
+        <label>Días de entrenamiento (0 a 7)
+          <input id="dias" type="number" min="0" max="7" step="1" required>
+        </label>
+        <button class="boton boton-principal" type="submit">Planificar</button>
+      </form>
+      <p id="resultado-dias" class="resultado-dias" aria-live="polite"></p>
+    </section>
+    <footer>Pre-entrega 7 · DOM y eventos · Coderhouse</footer>
+  </main>
+</body>
+</html>

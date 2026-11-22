@@ -1,0 +1,53 @@
+:root {font-family: Arial, Helvetica, sans-serif; color:#243746; background:#f2f6f8;}
+* {box-sizing:border-box;}
+body {margin:0;}
+.contenedor {max-width:1050px;margin:0 auto;padding:30px 20px 24px;}
+.encabezado {background:#143d4d;color:white;padding:34px;border-radius:18px;margin-bottom:22px;}
+.etiqueta {letter-spacing:2px;text-transform:uppercase;font-size:12px;font-weight:bold;color:#aee9d8;}
+h1 {font-size:clamp(26px,4vw,38px);margin:12px 0;}
+h2 {font-size:21px;margin:0 0 17px;}
+h3 {font-size:19px;margin:9px 0;}
+.encabezado p:last-child {color:#d3e3e8;}
+.panel {background:#fff;border:1px solid #d9e5e8;border-radius:16px;padding:25px;margin-bottom:20px;box-shadow:0 4px 16px #163d4a0b;}
+.campos {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:20px;}
+label {display:flex;flex-direction:column;gap:7px;font-size:14px;font-weight:bold;color:#395260;}
+input,select {width:100%;font:inherit;padding:12px;border:1px solid #b9cbd1;border-radius:9px;background:white;color:#243746;}
+input:focus,select:focus {outline:2px solid #1d8c78;outline-offset:1px;}
+.boton {cursor:pointer;border:0;border-radius:9px;padding:12px 17px;font-weight:bold;font-size:14px;}
+.boton-principal {background:#177c6b;color:white;}
+.boton-principal:hover {background:#0f6356;}
+.boton-secundario {background:#e3f4ef;color:#116759;}
+.boton-eliminar {background:#fff0ed;color:#9e3f33;border:1px solid #efc8c1;}
+.boton:hover {filter:brightness(.95);}
+.mensaje {margin:0 0 18px;border-radius:10px;min-height:0;}
+.mensaje:not(:empty) {padding:13px 16px;border:1px solid transparent;}
+.mensaje-exito:not(:empty) {background:#e6f5ec;color:#146341;border-color:#b2dcc5;}
+.mensaje-error:not(:empty) {background:#fff0ed;color:#993b32;border-color:#efc8c1;}
+.cabecera-seccion {display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.texto-secundario {color:#657985;margin:0 0 15px;}
+.insignia {background:#e3f4ef;color:#13695b;border-radius:30px;padding:7px 12px;font-size:12px;font-weight:bold;}
+.filtros {display:grid;grid-template-columns:2fr 1fr;gap:15px;margin:10px 0 20px;}
+.lista-rutinas {display:grid;gap:12px;}
+.tarjeta-rutina {border:1px solid #d8e4e9;background:#f9fcfd;border-radius:13px;padding:18px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.tarjeta-rutina p {margin:7px 0;color:#526b78;font-size:14px;}
+.nivel {background:#e6eff4;color:#365a6b;padding:5px 9px;font-size:12px;border-radius:6px;font-weight:bold;}
+.tarjeta-rutina .calorias-rutina {font-weight:bold;color:#137965;}
+.acciones-rutina {display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end;}
+.sin-resultados {padding:22px;color:#526b78;text-align:center;border:1px dashed #adc8d0;border-radius:12px;}
+.form-dias {display:flex;gap:15px;align-items:end;margin:15px 0;}
+.form-dias label {max-width:250px;flex:1;}
+.resultado-dias:not(:empty) {background:#ebf4f7;padding:12px;border-radius:8px;}
+.total-calorias {border-top:1px solid #dbe6e8;padding-top:20px;margin-top:22px;display:flex;justify-content:space-between;gap:14px;align-items:center;}
+.total-calorias strong {font-size:25px;color:#127c6b;white-space:nowrap;}
+.nota {color:#748791;font-size:12px;}
+footer {text-align:center;color:#71838d;font-size:12px;padding:12px 0;}
+@media(max-width:650px) {.campos,.filtros {grid-template-columns:1fr;}.tarjeta-rutina {align-items:stretch;flex-direction:column;}.acciones-rutina {justify-content:flex-start;}.form-dias {align-items:stretch;flex-direction:column;}.form-dias label {max-width:none;}.total-calorias {align-items:flex-start;flex-direction:column;}}
+/* Secciones y resumen de actividades seleccionadas */
+.paso {color:#177c6b;letter-spacing:1.3px;font-size:12px;font-weight:800;margin:0 0 9px;}
+.panel-destacado {border:2px solid #9bd7c6;background:#f7fcfa;}
+.tarjeta-elegida {background:#fff;border-color:#a7d5c7;}
+.totales-plan {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.totales-plan div {background:#e3f4ef;border-radius:12px;padding:17px;display:flex;flex-direction:column;gap:8px;}
+.totales-plan span {font-size:13px;color:#396b60;}
+.totales-plan strong {font-size:24px;color:#116759;}
+@media(max-width:650px) {.totales-plan {grid-template-columns:1fr;}}
